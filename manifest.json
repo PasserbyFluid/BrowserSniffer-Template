@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "监听浏览器XHR请求的响应内容并发送到服务器",
+  "version": "0.1",
+  "description": "监听网页中的 XHR 响应并发送到服务器",
+  "permissions": ["scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
