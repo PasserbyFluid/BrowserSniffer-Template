@@ -4,7 +4,7 @@ const script = document.createElement("script");
 script.src = chrome.runtime.getURL("injected.js");
 
 // 过滤接口的关键词,只要包含这个关键词的接口都会被抓取(injected配置了这里可以不用配)
-const targetKeyword = 'starnet'
+const targetKeyword = 'test'
 script.onload = function () {
   this.remove();
 };
@@ -29,8 +29,7 @@ window.addEventListener("message", function (event) {
     fetch(targetUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "auth": "220466675e31b9d20c051d5e57974150"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(orginData)
     });
