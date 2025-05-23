@@ -1,0 +1,1 @@
+"# BrowserSniffer-Template" 
